@@ -2,7 +2,7 @@
 <con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:coreEntry>
         <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
-            <con:wsdl ref="AgentSB/Resources/validateAgentByUserId-concrete"/>
+            <con:wsdl ref="AgentSB/wsdl/validateAgentByUserId-concrete"/>
             <con:binding>
                 <con:name>validateAgentByUserId_ptt-binding</con:name>
                 <con:namespace>http://xmlns.oracle.com/pcbpel/adapter/db/Income_OSB_Application/AgentSB/validateAgentByUserId</con:namespace>
@@ -19,7 +19,7 @@
                 <con:actions>
                     <con1:route>
                         <con2:id>_ActionId-N3f57c7ff.N6dc6fc94.0.155b4c4f2e2.N7ffd</con2:id>
-                        <con1:service ref="AgentSB/validateAgentByUserId" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:service ref="AgentSB/business/validateAgentByUserId" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
                         <con1:operation passThrough="true"/>
                         <con1:outboundTransform/>
                         <con1:responseTransform/>

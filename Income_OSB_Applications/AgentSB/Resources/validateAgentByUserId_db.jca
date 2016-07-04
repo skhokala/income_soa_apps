@@ -1,4 +1,4 @@
-<adapter-config name="validateAgentByUserId" adapter="db" wsdlLocation="validateAgentByUserId.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+<adapter-config name="validateAgentByUserId" adapter="db" wsdlLocation="../wsdl/validateAgentByUserId.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
   <connection-factory UIConnectionName="awplsoa" location="eis/DB/awplsoa"/>
   <endpoint-interaction portType="validateAgentByUserId_ptt" operation="validateAgentByUserIdSelect">

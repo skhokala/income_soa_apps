@@ -2,7 +2,7 @@
 <ser:businessServiceEntry xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <ser:coreEntry>
         <ser:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config">
-            <con:wsdl ref="AgentSB/Resources/validateAgentByUserId-concrete"/>
+            <con:wsdl ref="AgentSB/wsdl/validateAgentByUserId-concrete"/>
             <con:binding>
                 <con:name>validateAgentByUserId_ptt-binding</con:name>
                 <con:namespace>http://xmlns.oracle.com/pcbpel/adapter/db/Income_OSB_Application/AgentSB/validateAgentByUserId</con:namespace>
