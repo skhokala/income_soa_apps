@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-persistence xmlns="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eclipselink="http://www.eclipse.org/eclipselink/xsds/persistence" version="Eclipse Persistence Services - 2.6.1.v20150916-55dc7c3">
+   <name>validateAgentByUserId-OR</name>
+   <class-mapping-descriptors>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>validateAgentByUserId.Agentinquiry</class>
+         <alias>AGENTINQUIRY</alias>
+         <primary-key>
+            <field table="AGENTINQUIRY" name="USERNAME" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="validateAgentByUserIdSelect" xsi:type="read-all-query">
+                  <criteria operator="and" xsi:type="logic-expression">
+                     <left operator="equal" xsi:type="relation-expression">
+                        <left name="username" xsi:type="query-key-expression">
+                           <base xsi:type="base-expression"/>
+                        </left>
+                        <right xsi:type="parameter-expression">
+                           <parameter name="userName" xsi:type="column"/>
+                        </right>
+                     </left>
+                     <right function="notNull" xsi:type="function-expression">
+                        <arguments>
+                           <argument name="callingparty" xsi:type="query-key-expression">
+                              <base xsi:type="base-expression"/>
+                           </argument>
+                        </arguments>
+                     </right>
+                  </criteria>
+                  <arguments>
+                     <argument name="userName">
+                        <type>java.lang.String</type>
+                     </argument>
+                     <argument name="callingParty">
+                        <type>java.lang.String</type>
+                     </argument>
+                  </arguments>
+                  <reference-class>validateAgentByUserId.Agentinquiry</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>username</attribute-name>
+               <field table="AGENTINQUIRY" name="USERNAME" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>agentcode</attribute-name>
+               <field table="AGENTINQUIRY" name="AGENTCODE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>agentid</attribute-name>
+               <field table="AGENTINQUIRY" name="AGENTID" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>callingparty</attribute-name>
+               <field table="AGENTINQUIRY" name="CALLINGPARTY" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>agentstatus</attribute-name>
+               <field table="AGENTINQUIRY" name="AGENTSTATUS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>agreementcode</attribute-name>
+               <field table="AGENTINQUIRY" name="AGREEMENTCODE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>failedreason</attribute-name>
+               <field table="AGENTINQUIRY" name="FAILEDREASON" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>agentcate</attribute-name>
+               <field table="AGENTINQUIRY" name="AGENTCATE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="one-to-many-mapping">
+               <attribute-name>productCodeList</attribute-name>
+               <reference-class>validateAgentByUserId.Products</reference-class>
+               <private-owned>true</private-owned>
+               <target-foreign-key>
+                  <field-reference>
+                     <source-field table="PRODUCTS" name="USERNAME" xsi:type="column"/>
+                     <target-field table="AGENTINQUIRY" name="USERNAME" xsi:type="column"/>
+                  </field-reference>
+               </target-foreign-key>
+               <batch-reading>true</batch-reading>
+               <container xsi:type="list-container-policy">
+                  <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+               </container>
+               <indirection xsi:type="value-holder-indirection-policy"/>
+               <selection-query xsi:type="read-all-query">
+                  <reference-class>validateAgentByUserId.Products</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>org.eclipse.persistence.indirection.IndirectList</collection-type>
+                  </container>
+               </selection-query>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="AGENTINQUIRY"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>validateAgentByUserId.Products</class>
+         <alias>PRODUCTS</alias>
+         <primary-key>
+            <field table="PRODUCTS" name="PRDCODE" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="validateAgentByUserIdSelect" xsi:type="read-all-query">
+                  <reference-class>validateAgentByUserId.Products</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>prdcode</attribute-name>
+               <field table="PRODUCTS" name="PRDCODE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>username</attribute-name>
+               <read-only>true</read-only>
+               <properties>
+                  <property name="fkPlaceholder">
+                     <value>true</value>
+                  </property>
+               </properties>
+               <field table="PRODUCTS" name="USERNAME" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="PRODUCTS"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+   </class-mapping-descriptors>
+   <login xsi:type="database-login">
+      <platform-class>org.eclipse.persistence.platform.database.oracle.Oracle9Platform</platform-class>
+      <connection-url></connection-url>
+   </login>
+</object-persistence>

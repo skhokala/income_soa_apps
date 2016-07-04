@@ -1,0 +1,21 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="AgentService">AgentService</doc>
+   <grammars>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/Income_OSB_Application/AgentSB/validateAgentByUserId" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId" schemaLocation="validateAgentByUserId_table.xsd"/>
+      </schema>
+   </grammars>
+   <resources>
+      <resource path="/validateAgentByUserId">
+         <method name="GET" soa:wsdlOperation="validateAgentByUserIdSelect">
+            <request soa:paramElement="pns:validateAgentByUserIdSelect_userName_callingPartyInputParameters" xmlns:pns="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId">
+               <param name="userName" style="query" soa:expression="$msg.validateAgentByUserIdSelect_inputParameters/top:userName" type="xsd:string"/>
+               <param name="callingParty" style="query" soa:expression="$msg.validateAgentByUserIdSelect_inputParameters/top:callingParty" type="xsd:string"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json" element="cns:AgentinquiryCollection" xmlns:cns="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>
