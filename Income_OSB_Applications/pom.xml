@@ -12,6 +12,7 @@
     <modules>
         <module>System</module>
         <module>PolicySB</module>
+        <module>PremiumSB</module>
     </modules>
 
 </project>
