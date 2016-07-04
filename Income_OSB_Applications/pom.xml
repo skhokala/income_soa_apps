@@ -11,11 +11,7 @@
 
     <modules>
         <module>System</module>
-        <module>PolicySB</module>
-        <module>PremiumSB</module>
-        <module>CampaignSB</module>
-        <module>CustomerSB</module>
-        <module>CountrySB</module>
+        <module>AgentSB</module>
     </modules>
 
 </project>
