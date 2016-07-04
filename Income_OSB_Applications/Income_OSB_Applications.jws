@@ -24,6 +24,9 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
+      <hash><url n="URL" path="CampaignSB/CampaignSB.jpr"/></hash>
+      <hash><url n="URL" path="CountrySB/CountrySB.jpr"/></hash>
+      <hash><url n="URL" path="CustomerSB/CustomerSB.jpr"/></hash>
       <hash><url n="URL" path="PolicySB/PolicySB.jpr"/></hash>
       <hash><url n="URL" path="PremiumSB/PremiumSB.jpr"/></hash>
    </list>
