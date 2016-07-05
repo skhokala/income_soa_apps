@@ -25,7 +25,34 @@
                 </con:actions>
             </con:stage>
         </con:pipeline>
+        <con:pipeline type="request" name="request-N3f57f917.61798a24.0.155b5bdeee5.N7e0e">
+            <con:stage id="_StageId-N3f57f917.61798a24.0.155b5bdeee5.N7e0c" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57f917.61798a24.0.155b5bdeee5.N7e0d">
+            <con:stage id="_StageId-N3f57f917.61798a24.0.155b5bdeee5.N7e0b" name="Stage1">
+                <con:context>
+                    <con1:userNsDecl prefix="val" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId"/>
+                    <con1:userNsDecl prefix="xpat" namespace="http://www.w3.org/2004/07/xpath-functions"/>
+                </con:context>
+                <con:actions>
+                    <con2:validate>
+                        <con1:id>_ActionId-N3f57f917.61798a24.0.155b5bdeee5.N7dd8</con1:id>
+                        <con2:schema ref="AgentSB/xsd/validateAgentByUserId_table"/>
+                        <con2:schemaType xmlns:val="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId">val:Agentinquiry</con2:schemaType>
+                        <con2:varName>body</con2:varName>
+                        <con2:resultVarName>body</con2:resultVarName>
+                    </con2:validate>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
         <con:flow>
+            <con:pipeline-node name="PipelinePairNode1">
+                <con:request>request-N3f57f917.61798a24.0.155b5bdeee5.N7e0e</con:request>
+                <con:response>response-N3f57f917.61798a24.0.155b5bdeee5.N7e0d</con:response>
+            </con:pipeline-node>
             <con:route-node name="ValidateAgent" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
                 <con:context/>
                 <con:actions>
