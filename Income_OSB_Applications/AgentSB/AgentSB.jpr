@@ -53,52 +53,13 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="AgentSB">
-            <hash n="archiveOptions">
-               <value n="hasManifest" v="true"/>
-            </hash>
-            <hash n="fileGroups">
-               <list n="groups">
-                  <hash>
-                     <list n="contributors">
-                        <hash>
-                           <value n="type" v="2"/>
-                        </hash>
-                        <hash>
-                           <value n="type" v="7"/>
-                        </hash>
-                     </list>
-                     <value n="displayName" v="Project Output"/>
-                     <hash n="filters">
-                        <list n="rules">
-                           <hash>
-                              <value n="pattern" v="**"/>
-                              <value n="type" v="0"/>
-                           </hash>
-                        </list>
-                     </hash>
-                     <value n="internalName" v="project-output"/>
-                     <value n="type" v="1"/>
-                  </hash>
-               </list>
-            </hash>
-            <url n="jarURL" path="../../../../../Users/Admin/Desktop/Jars/AgentSB.jar"/>
-            <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
-            <value n="profileName" v="AgentSB"/>
-         </hash>
          <hash n="Project1">
             <value n="profileClass" v="SbProjectDeployProfile"/>
             <value n="profileName" v="Project1"/>
          </hash>
-         <hash n="ServiceBus1">
-            <value n="profileClass" v="SbProjectDeployProfile"/>
-            <value n="profileName" v="ServiceBus1"/>
-         </hash>
       </hash>
       <list n="profileList">
          <string v="Project1"/>
-         <string v="AgentSB"/>
-         <string v="ServiceBus1"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">
