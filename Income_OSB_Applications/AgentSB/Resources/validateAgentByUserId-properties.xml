@@ -42,7 +42,7 @@
    <entry key="AGENTINQUIRY:db_column_2">AGENTID</entry>
    <entry key="AGENTINQUIRY:db_column_1">AGENTCODE</entry>
    <entry key="AGENTINQUIRY:db_column_0">USERNAME</entry>
-   <entry key="AGENTINQUIRY.AGENTSTATUS:db_column_type">VARCHAR2</entry>
-   <entry key="AGENTINQUIRY.CALLINGPARTY:db_column_type">VARCHAR2</entry>
    <entry key="PRODUCTS.USERNAME:db_column_size">25</entry>
+   <entry key="AGENTINQUIRY.CALLINGPARTY:db_column_type">VARCHAR2</entry>
+   <entry key="AGENTINQUIRY.AGENTSTATUS:db_column_type">VARCHAR2</entry>
 </properties>

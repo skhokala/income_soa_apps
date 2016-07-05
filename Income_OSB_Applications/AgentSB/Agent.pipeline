@@ -37,15 +37,7 @@
                     <con1:userNsDecl prefix="val" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId"/>
                     <con1:userNsDecl prefix="xpat" namespace="http://www.w3.org/2004/07/xpath-functions"/>
                 </con:context>
-                <con:actions>
-                    <con2:validate>
-                        <con1:id>_ActionId-N3f57f917.61798a24.0.155b5bdeee5.N7dd8</con1:id>
-                        <con2:schema ref="AgentSB/xsd/validateAgentByUserId_table"/>
-                        <con2:schemaType xmlns:val="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId">val:Agentinquiry</con2:schemaType>
-                        <con2:varName>body</con2:varName>
-                        <con2:resultVarName>body</con2:resultVarName>
-                    </con2:validate>
-                </con:actions>
+                <con:actions></con:actions>
             </con:stage>
         </con:pipeline>
         <con:flow>
