@@ -1,0 +1,14 @@
+<adapter-config name="validateAgentByUserId" adapter="db" wsdlLocation="../wsdl/validateAgentByUserId.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="awplsoa" location="eis/DB/awplsoa"/>
+  <endpoint-interaction portType="validateAgentByUserId_ptt" operation="validateAgentByUserIdSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="validateAgentByUserId.Agentinquiry"/>
+      <property name="QueryName" value="validateAgentByUserIdSelect"/>
+      <property name="MappingsMetaDataURL" value="validateAgentByUserId-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>
