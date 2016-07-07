@@ -1,0 +1,32 @@
+<wsdl:definitions
+     name="validateAgentByUserId"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/Income_OSB_Applications/AgentSB/validateAgentByUserId"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/Income_OSB_Applications/AgentSB/validateAgentByUserId"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="validateAgentByUserId_plt" >
+    <plt:role name="validateAgentByUserId_role" >
+      <plt:portType name="tns:validateAgentByUserId_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId" schemaLocation="validateAgentByUserId_table.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="validateAgentByUserIdSelect_inputParameters">
+        <wsdl:part name="validateAgentByUserIdSelect_inputParameters" element="top:validateAgentByUserIdSelect_userName_callingPartyInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="AgentinquiryCollection_msg">
+        <wsdl:part name="AgentinquiryCollection" element="top:AgentinquiryCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="validateAgentByUserId_ptt">
+        <wsdl:operation name="validateAgentByUserIdSelect">
+            <wsdl:input message="tns:validateAgentByUserIdSelect_inputParameters"/>
+            <wsdl:output message="tns:AgentinquiryCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

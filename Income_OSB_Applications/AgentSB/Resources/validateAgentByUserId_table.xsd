@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="AgentinquiryCollection" type="AgentinquiryCollection"/>
+   <xs:complexType name="AgentinquiryCollection">
+      <xs:sequence>
+         <xs:element name="Agentinquiry" type="Agentinquiry" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Agentinquiry">
+      <xs:sequence>
+         <xs:element name="agentname" type="string25"/>
+         <xs:element name="agentcode" type="string25" minOccurs="0"/>
+         <xs:element name="agentid" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="callingparty" type="string25" minOccurs="0"/>
+         <xs:element name="agentstatus" type="string25" minOccurs="0"/>
+         <xs:element name="agreementcode" type="string25" minOccurs="0" nillable="true"/>
+         <xs:element name="failedreason" type="string25" minOccurs="0" nillable="true"/>
+         <xs:element name="agentcate" type="string25" minOccurs="0" nillable="true"/>
+         <xs:element name="agreementid" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="productsCollection" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="Products" type="Products" minOccurs="0" maxOccurs="unbounded"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Products">
+      <xs:sequence>
+         <xs:element name="productcode" type="string25" minOccurs="0"/>
+         <xs:element name="productname" type="string100" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="validateAgentByUserIdSelect_userName_callingPartyInputParameters" type="validateAgentByUserIdSelect_userName_callingParty"/>
+   <xs:complexType name="validateAgentByUserIdSelect_userName_callingParty">
+      <xs:sequence>
+         <xs:element name="userName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="callingParty" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string25">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="25"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string100">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="100"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>
