@@ -2,7 +2,8 @@
    <doc title="AgentService">AgentService</doc>
    <grammars>
       <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/Income_OSB_Application/AgentSB/validateAgentByUserId" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId" schemaLocation="../xsd/validateAgentByUserId_table.xsd"/>
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/validateAgentByUserId"
+                schemaLocation="../xsd/validateAgentByUserId_table.xsd"/>
       </schema>
    </grammars>
    <resources>

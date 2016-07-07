@@ -6,7 +6,7 @@
          <class>validateAgentByUserId.Agentinquiry</class>
          <alias>AGENTINQUIRY</alias>
          <primary-key>
-            <field table="AGENTINQUIRY" name="USERNAME" xsi:type="column"/>
+            <field table="AGENTINQUIRY" name="AGENTNAME" xsi:type="column"/>
          </primary-key>
          <events/>
          <querying>
@@ -14,7 +14,7 @@
                <query name="validateAgentByUserIdSelect" xsi:type="read-all-query">
                   <criteria operator="and" xsi:type="logic-expression">
                      <left operator="equal" xsi:type="relation-expression">
-                        <left name="username" xsi:type="query-key-expression">
+                        <left name="agentname" xsi:type="query-key-expression">
                            <base xsi:type="base-expression"/>
                         </left>
                         <right xsi:type="parameter-expression">
@@ -46,8 +46,8 @@
          </querying>
          <attribute-mappings>
             <attribute-mapping xsi:type="direct-mapping">
-               <attribute-name>username</attribute-name>
-               <field table="AGENTINQUIRY" name="USERNAME" xsi:type="column"/>
+               <attribute-name>agentname</attribute-name>
+               <field table="AGENTINQUIRY" name="AGENTNAME" xsi:type="column"/>
                <attribute-classification>java.lang.String</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
@@ -58,7 +58,7 @@
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>agentid</attribute-name>
                <field table="AGENTINQUIRY" name="AGENTID" xsi:type="column"/>
-               <attribute-classification>java.lang.String</attribute-classification>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>callingparty</attribute-name>
@@ -85,14 +85,19 @@
                <field table="AGENTINQUIRY" name="AGENTCATE" xsi:type="column"/>
                <attribute-classification>java.lang.String</attribute-classification>
             </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>agreementid</attribute-name>
+               <field table="AGENTINQUIRY" name="AGREEMENTID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
             <attribute-mapping xsi:type="one-to-many-mapping">
-               <attribute-name>productCodeList</attribute-name>
+               <attribute-name>productsCollection</attribute-name>
                <reference-class>validateAgentByUserId.Products</reference-class>
                <private-owned>true</private-owned>
                <target-foreign-key>
                   <field-reference>
-                     <source-field table="PRODUCTS" name="USERNAME" xsi:type="column"/>
-                     <target-field table="AGENTINQUIRY" name="USERNAME" xsi:type="column"/>
+                     <source-field table="PRODUCTS" name="AGENTNAME" xsi:type="column"/>
+                     <target-field table="AGENTINQUIRY" name="AGENTNAME" xsi:type="column"/>
                   </field-reference>
                </target-foreign-key>
                <batch-reading>true</batch-reading>
@@ -129,34 +134,30 @@
          <class>validateAgentByUserId.Products</class>
          <alias>PRODUCTS</alias>
          <primary-key>
-            <field table="PRODUCTS" name="PRDCODE" xsi:type="column"/>
+            <field table="PRODUCTS" name="AGENTNAME" xsi:type="column"/>
          </primary-key>
          <events/>
-         <querying>
-            <queries>
-               <query name="validateAgentByUserIdSelect" xsi:type="read-all-query">
-                  <reference-class>validateAgentByUserId.Products</reference-class>
-                  <container xsi:type="list-container-policy">
-                     <collection-type>java.util.Vector</collection-type>
-                  </container>
-               </query>
-            </queries>
-         </querying>
+         <querying/>
          <attribute-mappings>
             <attribute-mapping xsi:type="direct-mapping">
-               <attribute-name>prdcode</attribute-name>
-               <field table="PRODUCTS" name="PRDCODE" xsi:type="column"/>
+               <attribute-name>productcode</attribute-name>
+               <field table="PRODUCTS" name="PRODUCTCODE" xsi:type="column"/>
                <attribute-classification>java.lang.String</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
-               <attribute-name>username</attribute-name>
+               <attribute-name>productname</attribute-name>
+               <field table="PRODUCTS" name="PRODUCTNAME" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>agentname</attribute-name>
                <read-only>true</read-only>
                <properties>
                   <property name="fkPlaceholder">
                      <value>true</value>
                   </property>
                </properties>
-               <field table="PRODUCTS" name="USERNAME" xsi:type="column"/>
+               <field table="PRODUCTS" name="AGENTNAME" xsi:type="column"/>
                <attribute-classification>java.lang.String</attribute-classification>
             </attribute-mapping>
          </attribute-mappings>
